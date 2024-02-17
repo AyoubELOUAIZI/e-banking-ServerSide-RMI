@@ -1,9 +1,7 @@
 package estm.dsic.jee.Models;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 public class Transaction implements Serializable {
     private int transactionId;
