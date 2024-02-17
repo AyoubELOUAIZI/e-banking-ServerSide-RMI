@@ -23,6 +23,7 @@ public class AccountDAL  {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        System.out.println("\nBalance called successfully by the user with id😎💚: "+userId);
         return balance;
     }
 
@@ -33,6 +34,7 @@ public class AccountDAL  {
             statement.setDouble(1, amount);
             statement.setInt(2, userId);
             int rowsAffected = statement.executeUpdate();
+            System.out.println("\nDposit called successfully by the user with id😎💚: "+userId+" Amount: "+amount);
             return rowsAffected > 0; // Returns true if at least one row was affected
         } catch (SQLException e) {
             e.printStackTrace();
@@ -47,6 +49,7 @@ public class AccountDAL  {
             statement.setDouble(1, amount);
             statement.setInt(2, userId);
             int rowsAffected = statement.executeUpdate();
+            System.out.println("\nWithdraw called successfully by the user with id😎💖: "+userId+" Amount: "+amount);
             return rowsAffected > 0; // Returns true if at least one row was affected
         } catch (SQLException e) {
             e.printStackTrace();
@@ -78,6 +81,7 @@ public class AccountDAL  {
     
             // Commit the transaction if both operations succeed
             connection.commit();
+            System.out.println("\nTrasfer called successfully by the user with id💛⚡: "+senderUserId+" Amount: "+amount+" to the receiver user: "+receiverUserId);
             return true;
         } catch (SQLException e) {
             e.printStackTrace();

@@ -29,6 +29,7 @@ public class TransactionDAL {
             e.printStackTrace();
             // Handle exception or log error
         }
+        System.out.println("\nTransaction history called successfully by the user with id✅: "+userId);
         return transactionHistory;
     }
 
@@ -41,6 +42,7 @@ public class TransactionDAL {
             statement.setString(2, transactionType);
             statement.setDouble(3, amount);
             int rowsAffected = statement.executeUpdate();
+            System.out.println("---> New transaction registered🚀🚀:\n{"+"UserId : "+ userId+"\nAmount : "+ amount+"\nTransaction Type : "+ transactionType+"}\n");
             return rowsAffected > 0; // Returns true if at least one row was affected
         } catch (SQLException e) {
             e.printStackTrace();

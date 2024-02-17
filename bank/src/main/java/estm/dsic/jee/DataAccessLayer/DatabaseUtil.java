@@ -17,7 +17,7 @@ public class DatabaseUtil {
         if (connection == null || connection.isClosed()) {
             // Create a new connection if it doesn't exist or is closed
             connection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
-            System.out.println("new Connection to database 🎁:" + connection);
+            System.out.println("\nnew Connection to database 🎁:" + connection);
         }
         return connection;
     }
